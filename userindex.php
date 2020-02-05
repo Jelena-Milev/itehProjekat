@@ -3,7 +3,7 @@
 require "dbBroker.php";
 require "model/predstava.php";
 
-session_start();
+// session_start();
 
 // if (!isset($_SESSION['korisnik_korisnikId'])) { 
 //     header('Location: index.php');
@@ -15,18 +15,18 @@ session_start();
 // }
 
 
-// $result = Predstava::getAll($conn);
+$result = Predstava::getAll($conn);
 
-// if (!$result) {
-//     echo "Nastala je greska pri izvodenju upita<br>";
-//     die();
-// }
-// if ($result->num_rows == 0)
-// {
-//     echo "Nema predstava";
-//     die();
+if (!$result) {
+    echo "Nastala je greska pri izvodenju upita<br>";
+    die();
+}
+if (count($result) == 0)
+{
+    echo "Nema predstava";
+    die();
 
-// }
+}
 // else {
 
 ?>
@@ -34,6 +34,9 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<meta charset="UTF-8">
+    <link rel="shortcut icon" type="image/x-icon" href="img/drama.png"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<?php include 'components/header.php';?>
 
 	<title>Dobrodošli u pozorište</title>
@@ -52,19 +55,19 @@ session_start();
 			<!-- Wrapper for slides -->
 			<div class="carousel-inner">
 				<div class="item active">
-					<div class="fill" style="background-image:url('img/post-strange.jpg');"></div>
+					<!-- <div class="fill" style="background-image:url('img/post-strange.jpg');"></div> -->
 					<div class="carousel-caption">
 						<h2>Rezervacija karata</h2>
 					</div>
 				</div>
 				<div class="item">
-					<div class="fill" style="background-image:url('img/post-parmanu.jpg');"></div>
+					<!-- <div class="fill" style="background-image:url('img/post-parmanu.jpg');"></div> -->
 					<div class="carousel-caption">
 						<h2>Najnovije predstave</h2>
 					</div>
 				</div>
 				<div class="item">
-					<div class="fill" style="background-image:url('img/post-dunkirk.png');"></div>
+					<!-- <div class="fill" style="background-image:url('img/post-dunkirk.png');"></div> -->
 					<div class="carousel-caption">
 						<h2>Rekli su o nama</h2>
 					</div>
@@ -87,22 +90,111 @@ session_start();
 				</div>
 				<div class="col-xs-12">
 					<h5 class="center-align text-uppercase lead">Predstave</h5>
-				</div>
-				<div class="col-md-3 col-sm-6">
-						<img class="img-responsive img-portfolio img-hover" src="img/cs-adhm.jpg" alt="">
-				</div>
-				<div class="col-md-3 col-sm-6">
-						<img class="img-responsive img-portfolio img-hover" src="img/cs-rockon2.jpg" alt="">
-				</div>
-				<div class="col-md-3 col-sm-6">
-						<img class="img-responsive img-portfolio img-hover" src="img/cs-strange.png" alt="">
-				</div>
-				<div class="col-md-3 col-sm-6">
-						<img class="img-responsive img-portfolio img-hover" src="img/cs-fbawtft.jpg" alt="">
-				</div>
+				</div>				
 			</div>
+			<div class="row">
+
+			<?php foreach ($result as $row) {
+									?>
+		<div class="col-xs-6 col-md-3">
+			<div class="thumbnail">
+			<center>
+                <a href="#">
+				<img src="<?php echo 'img/'.$row->id.'.jpg'?>" alt="<?php echo $row->naziv?>" style="width:40%; height:auto; margin-bottom:5px"></a>
+				<div class="caption">
+					<h4><?php echo $row->naziv;?></h4>		
+					<h5><?php echo $row->zanr;?></h5>
+					<p>
+						<button class="btnReserve" type="button" value="<?php echo $row->id?>" class="btn btn-default dropdown-toggle" style="color:#D11111; font-size:18px">Rezervišite sedište</button>
+					</p>
+				</div>
+			</center>
+         </div>
+	</div>
+	<?php
+	}
+?>
+</div>
+
 			<br><br><br>
 	</div>
+
+	<div class="modal fade" id="reservation" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <!-- <div class="modal-header" style="border:none;">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div> -->
+            <div class="modal-body" >
+                <div class="container-form" > <!--ovo je pozadina-->
+                    <div class="film-image"> 
+                        <!-- <img src="img/fav.jpg" alt="rocket_contact"/> -->
+                    </div>
+                    <form action="#" method="post" id="rezervacijaForm">  
+                        <h3 style="color: #FE3649">Rezervisanje sedišta</h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+									<p>Naziv predstave:</p>
+                                    <input id="filmIzmeni" type="text" name="naziv" required class="form-control"
+                                           placeholder="Naziv filma" value=""/>
+                                </div>
+                                <div class="form-group">
+									<p>Zanr predstave:</p>
+                                    <input id="zanrIzmeni" type="text" name="zanr" required class="form-control" placeholder="Žanr filma"
+                                           value=""/>
+                                </div>
+                                <div class="form-group">
+									<p>Trajanje predstave (u minutima):</p>
+                                    <input id="trajanjeIzmeni" type="number" name="trajanje" required min=0 class="form-control"
+                                           placeholder="Trajanje filma" value=""/>
+                                           
+                                </div>
+                                
+
+                                <div class="form-group">
+									<div class="dropdown">
+  										<button  id="dropdownMenuButton" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" 
+										  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: #B79256; border: #B79256;"><i
+                                                class="fas fa-ticket-alt"></i>
+    										Izbor sedišta
+  										</button>
+  										<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    
+  										</div>
+									</div>
+								</div>
+
+								<div class="form-group">
+                                    <button id="btnRezervisi" type="submit" class="btn btn-success btn-block"
+                                            style="background-color: #FE3649; border: #FE3649;"><i
+                                                class="	fas fa-couch"></i> Rezervišite sedište
+                                    </button>
+                                </div>
+
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+									<p>O predstavi:</p>
+                                    <textarea id="utisakIzmeni" name="opis" class="form-control" placeholder="Ocena/Utisak o filmu"
+                                              style="width: 100%; height: 150px;"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer" style="border:none;">
+              <!-- <button type="button" class="btn btn-default" style="background-color: #FE3649; border: #FE3649; color:white;" data-dismiss="modal">Close</button>-->
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
 
 	<div class="bottom">
 			<!-- Call to Action Section -->
@@ -138,8 +230,11 @@ session_start();
 				</div>
 			</div>
 	</div>
-
 	<?php include_once("./components/footer.php"); ?>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+	<script src="js/userpage.js"></script>
 	<script>
 		$('.carousel').carousel({
 			interval: 5000 //changes the speed
