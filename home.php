@@ -164,15 +164,15 @@ else {
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="text" name="nazivFilma" required class="form-control"
+                                    <input type="text" name="naziv" required class="form-control"
                                            placeholder="Naziv filma" value="<?php echo $red["filmId"] ?>"/>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" name="zanrFilma" required class="form-control" placeholder="Žanr filma"
+                                    <input type="text" name="zanr" required class="form-control" placeholder="Žanr filma"
                                            value=""/>
                                 </div>
                                 <div class="form-group">
-                                    <input type="number" name="trajanjeFilma" required min=0 class="form-control"
+                                    <input type="number" name="trajanje" required min=0 class="form-control"
                                            placeholder="Trajanje filma" value=""/>
                                            
                                 </div>
@@ -186,7 +186,7 @@ else {
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <textarea name="ocena_UtisakOFilmu" class="form-control" placeholder="Ocena/Utisak o filmu"
+                                    <textarea name="opis" class="form-control" placeholder="Ocena/Utisak o filmu"
                                               style="width: 100%; height: 150px;"></textarea>
                                 </div>
                             </div>

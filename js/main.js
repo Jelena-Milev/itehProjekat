@@ -44,24 +44,36 @@ $('#dodajForm').submit(function () {
     event.preventDefault();
     console.log("Ovde");
     const $form = $(this);
+
+    var array = jQuery($form).serializeArray();
+    var json = {};
+    
+    jQuery.each(array, function() {
+        json[this.name] = this.value || '';
+    });
+    console.log(json);
+
     const $inputs = $form.find('input, select, button, textarea');
-    const serializedData = $form.serialize();
-    console.log(serializedData);
+    // console.log($inputs);
+    // const serializedData = $form.serialize();
+    // console.log(serializedData);
     $inputs.prop('disabled', true);
 
     request = $.ajax({
-        url: 'handler/add.php',
+        url: 'http://localhost/domaci3/predstave',
         type: 'post',
-        data: serializedData
+        data: JSON.stringify(json)
     });
 
     request.done(function (response, textStatus, jqXHR) {
-        if (response === 'Success') {
-            console.log('Film je dodat');
+        console.log("Response: "+response);
+        console.log("poruka: "+response.poruka);
+        if (response.poruka === 'Predstava je uspešno ubačena') {
+            console.log('Predstava je dodata');
             console.log('EVO');
             location.reload(true);
         }
-        else console.log('Film nije dodat ' + response);
+        else console.log('Predstava nije dodata ' + odgovor.poruka);
         console.log(response);
     });
 
