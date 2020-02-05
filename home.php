@@ -22,7 +22,7 @@ if (!$result) {
     echo "Nastala je greska pri izvodenju upita<br>";
     die();
 }
-if ($result->num_rows == 0)
+if (count($result) == 0)
 {
     echo "Nema predstava";
     die();
@@ -115,18 +115,21 @@ else {
             </thead>
             <tbody>
             <?php
-            while ($red = $result->fetch_array()) {
+            // foreach ($toppings as $topping) {
+            //     echo $topping, "\n";
+            // }
+            foreach ($result as $row) {
                 ?>
                 <tr>
                     <!--<th scope="row">{{ counter }}</th>-->
-                   <!-- <td><?php echo $red["id"] ?></td>-->
-                    <td><?php echo $red["naziv"] ?></td>
-                    <td><?php echo $red["zanr"] ?></td>
-                    <td><?php echo $red["trajanje"] ?></td>
-                    <td><?php echo $red["opis"] ?></td>
+                   <!-- <td><?php echo $row->id ?></td>-->
+                    <td><?php echo $row->naziv ?></td>
+                    <td><?php echo $row->zanr ?></td>
+                    <td><?php echo $row->trajanje ?></td>
+                    <td><?php echo $row->opis ?></td>
                     <td>
                         <label class="custom-radio-btn">
-                            <input type="radio" name="checked-film" value=<?php echo $red["id"] ?>>
+                            <input type="radio" name="checked-film" value=<?php echo $row->id ?>>
                             <span class="checkmark"></span>
                         </label>
                     </td>

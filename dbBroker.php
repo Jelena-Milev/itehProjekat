@@ -1,6 +1,6 @@
 <?php
 $host = "localhost";
-$db = "to_watch_list";
+$db = "rest";
 $username = "root";
 $password = "";
 

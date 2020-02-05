@@ -21,8 +21,17 @@ class Predstava
 
     public static function getAll(mysqli $conn)
     {
-        $q = "SELECT * FROM predstava ORDER BY naziv"; // ovde mi sortira po nazivu
-        return $conn->query($q);
+        // $q = "SELECT * FROM predstava ORDER BY naziv"; // ovde mi sortira po nazivu
+        // return $conn->query($q);
+        $url = 'http://localhost/domaci3/predstave.json';
+        // echo $url;
+        $curl = curl_init($url);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($curl, CURLOPT_POST, false);
+        $curl_odgovor = curl_exec($curl);
+        curl_close($curl);
+        $parsiran_json = json_decode ($curl_odgovor);
+        return $parsiran_json;
     }
 
     public static function getById($id, mysqli $conn)

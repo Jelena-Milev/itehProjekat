@@ -1,14 +1,47 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<?php include 'components/header.php';?>
+<?php
 
-		<title>Dobrodošli u pozorište</title>
-	</head>
-	<body>
+require "dbBroker.php";
+require "model/predstava.php";
+
+session_start();
+
+// if (!isset($_SESSION['korisnik_korisnikId'])) { 
+//     header('Location: index.php');
+//     exit();
+// } elseif (isset($_GET['logout']) && !empty($_GET['logout'])) {
+//     session_unset();
+//     session_destroy();
+//     header("Location: index.php");
+// }
+
+
+$result = Predstava::getAll($conn);
+
+if (!$result) {
+    echo "Nastala je greska pri izvodenju upita<br>";
+    die();
+}
+if ($result->num_rows == 0)
+{
+    echo "Nema predstava";
+    die();
+
+}
+// else {
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<?php include 'components/header.php';?>
+
+	<title>Dobrodošli u pozorište</title>
+</head>
+<body>
 	<?php include_once("./components/navbar.php"); ?>
 
-		<header id="myCarousel" class="carousel slide">
+	<header id="myCarousel" class="carousel slide">
 			<!-- Indicators -->
 			<ol class="carousel-indicators">
 				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -45,9 +78,9 @@
 			<a class="right carousel-control" href="#myCarousel" data-slide="next">
 				<span class="icon-next"></span>
 			</a>
-		</header>
+	</header>
 
-		<div class="container">
+	<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
 					<h2 class="page-header">Rezervišite svoje karte</h2>
@@ -69,9 +102,9 @@
 				</div>
 			</div>
 			<br><br><br>
-		</div>
+	</div>
 
-		<div class="bottom">
+	<div class="bottom">
 			<!-- Call to Action Section -->
 			<div class="pre-footer small">
 				<div class="row">
@@ -104,13 +137,13 @@
 					</div>
 				</div>
 			</div>
-		</div>
+	</div>
 
-		<?php include_once("./components/footer.php"); ?>
-		<script>
-			$('.carousel').carousel({
-				interval: 5000 //changes the speed
-			})
-		</script>
-	</body>
+	<?php include_once("./components/footer.php"); ?>
+	<script>
+		$('.carousel').carousel({
+			interval: 5000 //changes the speed
+		});
+	</script>
+</body>
 </html>
