@@ -87,27 +87,25 @@ $('#btn-izmeni').click(function () {
     const checked = $('input[name=checked-film]:checked');
 
     request = $.ajax({
-        url: 'handler/get.php',
-        type: 'post',
-        data: {'id': checked.val()},
+        url: 'http://localhost/domaci3/predstave/'+checked.val()+'.json',
+        type: 'get',
         dataType: 'json'
     });
 
     request.done(function (response, textStatus, jqXHR) {
-        
-        console.log('Popunjena forma');
-        $('#filmIzmeni').val(response[0]['naziv']);
-        console.log(response[0]['naziv']);
+        var predstava = response[0];
+        $('#filmIzmeni').val(predstava.naziv);
+        console.log(predstava.naziv);
 
-        $('#zanrIzmeni').val(response[0]['zanr'].trim());
-        console.log(response[0]['zanr'].trim());
-        $('#trajanjeIzmeni').val(response[0]['trajanje'].trim());
-        console.log(response[0]['trajanje'].trim());
-        $('#utisakIzmeni').val(response[0]['opis'].trim());
-        console.log(response[0]['opis'].trim());
-        $('#id').val(checked.val());
+        $('#zanrIzmeni').val(predstava.zanr.trim());
+        console.log(predstava.zanr.trim());
+        $('#trajanjeIzmeni').val(predstava.trajanje.trim());
+        console.log(predstava.trajanje.trim());
+        $('#utisakIzmeni').val(predstava.opis.trim());
+        console.log(predstava.opis.trim());
+        $('#izmeniForm input[name=id]').val(checked.val());
       
-        console.log(response);
+        console.log("Podaci iz get by id "+response);
     });
 
     request.fail(function (jqXHR, textStatus, errorThrown) {
@@ -120,27 +118,37 @@ $('#btn-izmeni').click(function () {
 $('#izmeniForm').submit(function () {
     event.preventDefault();
     console.log("Izmene");
+    const checked = $('input[name=checked-film]:checked');
     const $form = $(this);
+
+    var array = jQuery($form).serializeArray();
+    var json = {};
+    
+    jQuery.each(array, function() {
+        json[this.name] = this.value || '';
+    });
+    console.log("Podaci za put "+json);
+
     const $inputs = $form.find('input, select, button, textarea');
-    const serializedData = $form.serialize();
-    console.log(serializedData);
+    // const serializedData = $form.serialize();
+    // console.log(serializedData);
     $inputs.prop('disabled', true);
 
     request = $.ajax({
-        url: 'handler/update.php',
-        type: 'post',
-        data: serializedData
+        url: 'http://localhost/domaci3/predstave/'+checked.val(),
+        type: 'put',
+        data: JSON.stringify(json)
     });
 
     request.done(function (response, textStatus, jqXHR) {
 
-
-        if (response === 'Success') {
-            console.log('Film je izmenjen');
+        console.log(response)
+        if (response.poruka === 'Predstava je uspešno izmenjena') {
+            console.log('Predstava je izmenjena');
             location.reload(true);
             
         }
-        else console.log('Film nije izmenjen ' + response);
+        else console.log('Predstava nije izmenjena ' + response.odgovor);
         console.log(response);
     });
 

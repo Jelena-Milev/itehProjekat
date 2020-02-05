@@ -165,7 +165,7 @@ else {
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <input type="text" name="naziv" required class="form-control"
-                                           placeholder="Naziv filma" value="<?php echo $red["filmId"] ?>"/>
+                                           placeholder="Naziv filma" value=""/>
                                 </div>
                                 <div class="form-group">
                                     <input type="text" name="zanr" required class="form-control" placeholder="Žanr filma"
@@ -221,19 +221,19 @@ else {
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input id="id" type="text" name="filmId" required class="form-control"
+                                    <input id="id" type="text" name="id" required class="form-control"
                                            placeholder="Id filma" value="" readonly/>
                                 </div>
                                 <div class="form-group">
-                                    <input id="filmIzmeni" type="text" name="nazivFilma" required class="form-control"
+                                    <input id="filmIzmeni" type="text" name="naziv" required class="form-control"
                                            placeholder="Naziv filma" value=""/>
                                 </div>
                                 <div class="form-group">
-                                    <input id="zanrIzmeni" type="text" name="zanrFilma" required class="form-control"
+                                    <input id="zanrIzmeni" type="text" name="zanr" required class="form-control"
                                            placeholder="Žanr filma" value=""/>
                                 </div>
                                 <div class="form-group">
-                                    <input id="trajanjeIzmeni" type="number" name="trajanjeFilma" required min=0 class="form-control"
+                                    <input id="trajanjeIzmeni" type="number" name="trajanje" required min=0 class="form-control"
                                            placeholder="Trajanje filma" value=""/>
                                 </div>
                                 <div class="form-group">
@@ -247,7 +247,7 @@ else {
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <textarea id="utisakIzmeni" name="ocena_utisakOFilmu" class="form-control"
+                                    <textarea id="utisakIzmeni" name="opis" class="form-control"
                                               placeholder="Ocena/Utisak o filmu"
                                               style="width: 100%; height: 150px;"></textarea>
                                               <!-- -->

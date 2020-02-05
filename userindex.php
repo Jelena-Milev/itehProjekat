@@ -15,18 +15,18 @@ session_start();
 // }
 
 
-$result = Predstava::getAll($conn);
+// $result = Predstava::getAll($conn);
 
-if (!$result) {
-    echo "Nastala je greska pri izvodenju upita<br>";
-    die();
-}
-if ($result->num_rows == 0)
-{
-    echo "Nema predstava";
-    die();
+// if (!$result) {
+//     echo "Nastala je greska pri izvodenju upita<br>";
+//     die();
+// }
+// if ($result->num_rows == 0)
+// {
+//     echo "Nema predstava";
+//     die();
 
-}
+// }
 // else {
 
 ?>
