@@ -5,19 +5,18 @@ $('#btn').click(function () {
 $('#btn-obrisi').click(function () {
     const checked = $('input[name=checked-film]:checked');
     request = $.ajax({
-        url: 'handler/delete.php',
-        type: 'post',
-        data: {'id': checked.val()}
+        url: 'http://localhost/domaci3/predstave/'+checked.val(),
+        type: 'delete',
     });
 
     request.done(function (response, textStatus, jqXHR) {
-        if (response === 'Success') {
+        if (response.poruka === 'Predstava je uspešno izbrisana') {
             checked.closest('tr').remove();
-            alert('Film je obrisan');
+            alert('Predstava je obrisana');
             console.log('Obrisan');
         }
         else {
-            console.log('Film nije obrisan');
+            console.log('Predstava nije obrisana');
             alert('Film nije obrisan');
         }
         console.log(response);
