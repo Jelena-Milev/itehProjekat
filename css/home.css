@@ -1,0 +1,83 @@
+.jumbotron{
+    background-image: url("../img/kokice-glavna.jpg");
+    
+    background-color: rgb(252, 252, 252);
+    color: white;
+}
+
+.jumbotron h1{
+    text-align: center;
+    padding-top: 10px;
+    font-size: 60px;
+    font-family:'Buxton Sketch', Courier, monospace;
+}
+
+
+body{
+   background-image: url("../img/cinema.jpg");
+}
+
+
+/* forma dodaj*/
+.modal-content{
+    background-image: url("../img/popcorn.jpg");
+    
+    height: 10%;
+    
+}
+
+.modal-body h3{
+text-align: center;
+font-size: 19px;
+/*font-weight: bold;*/ 
+
+}
+
+
+.film-image{
+ 
+    fill-opacity: 0%;
+    text-align: center;
+  
+}
+
+.modal-dialog{ /*ovim sam sliku ubacila iste velicine na oba*/
+height: 1000%;
+
+}
+
+
+.film-image img{
+    border-radius: 6rem;
+    width: 11%;
+    margin-top: -3%;
+    transform: rotate(29deg);
+}
+
+
+
+
+.btnSubmit
+{
+    width: 50%;
+    border-radius: 1rem;
+    padding: 1.5%;
+    color: #fff;
+    background-color: #0062cc;
+    border: none;
+    cursor: pointer;
+}
+
+
+
+table, th,td {
+    border-bottom: 1px solid black;
+    border-collapse: collapse;
+    color: white; /*za boju slova*/
+    background-color: #352621; /*boja pozadine tabele*/
+}
+
+.panel-body {
+background-color: #352621;
+
+}

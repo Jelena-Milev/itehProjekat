@@ -1,0 +1,87 @@
+
+body {
+   background-image: url("../img/cinema.jpg");
+   background-position: center;
+   
+}
+
+
+form {
+    /*border: 3px solid #f1f1f1;*/
+    display: block;
+    margin-top: 0em;
+}
+
+.panel-heading{
+    color: white;
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password] {
+    width: 60%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+
+
+
+button:hover {
+    opacity: 0.8;
+}
+
+
+.imgcontainer {
+   
+    text-align: center;
+    margin: 24px 0 12px 0;
+  
+}
+
+
+img.watch {
+    width: 380px;
+    height: 300px;
+    border-radius: 0%;
+    
+}
+
+
+.btn.btn-primary.container {
+ 
+    
+    padding: 16px;
+}
+
+.main-div {
+  
+    background: rgb(71, 8, 8) none repeat scroll 0 0;
+    border-radius: 10px;
+    margin: 10px auto 30px;
+    max-width: 28%;
+    padding: 50px 70px -10px 50px;
+    max-height: 10%;
+}
+
+.login-form {
+    color: white; 
+    text-align: center;
+}
+
+.login-form .btn.btn-primary {
+    background: rgb(7, 7, 70) none repeat scroll 0 0;
+    border-color: rgb(7, 7, 70);
+    color: #ffffff;
+    font-size: 14px;
+    width: 60%;
+    height: 50px;
+    line-height: 50px;
+    padding: 0px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
