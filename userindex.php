@@ -139,7 +139,7 @@ if (count($result) == 0)
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-									<p>Naziv predstave:</p>
+									<p value = "" name="idPredstave">Naziv predstave:</p>
                                     <input id="filmIzmeni" type="text" name="naziv" required class="form-control"
                                            placeholder="Naziv filma" value="" readonly/>
                                 </div>
@@ -224,6 +224,9 @@ if (count($result) == 0)
 			</div>
 	</div>
 	<?php include_once("./components/footer.php"); ?>
+	<link rel="stylesheet" href="jquery-ui/jquery-ui.min.css">
+	<script src="jquery-ui/external/jquery/jquery.js"></script>
+	<script src="jquery-ui/jquery-ui.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="js/userpage.js"></script>
