@@ -12,14 +12,16 @@ $('.btnReserve').click(function () {
 
 $(document).ready(function() {
     $('#datumiIzvodjenja').change(function() {
-      console.log("promenjen datum "+$('#datumiIzvodjenja').val())
       ucitajSedista();
     });
   });
 
 function ucitajSedista(){
-   // console.log("ucitaj sedista dat: "+$('#datumiIzvodjenja').val())
-    //console.log("ucitaj sedista id: "+$('#btnRezervisi').val())
+    if($('#datumiIzvodjenja').val() == 'testni'){
+        console.log("testni izabran");
+        $("#sediste").empty();
+        return;
+    }
     request = $.ajax({
         url: 'http://localhost/domaci3/predstave/'+ $('#btnRezervisi').val()+'/'+$('#datumiIzvodjenja').val()+'.json',
         type: 'get',
@@ -49,6 +51,7 @@ function ucitajDatumeIzvodjenja(id){
 
     request.done(function (response, textStatus, jqXHR) {
         $("#datumiIzvodjenja").empty();
+        $('#datumiIzvodjenja').append('<option value="testni"> Izberite datum </option>');
         response.forEach(function(value, index){
             $('#datumiIzvodjenja').append('<option value='+value.datum+'>' + value.formDatum + '</option>');
         });
@@ -71,14 +74,10 @@ function ucitajPredstavu(id){
     request.done(function (response, textStatus, jqXHR) {
         var predstava = response[0];
         $('#filmIzmeni').val(predstava.naziv);
-        console.log(predstava.naziv);
 
         $('#trajanjeIzmeni').val(predstava.trajanje.trim());
-        console.log(predstava.trajanje.trim());
         //ovde sacuvam id predstave
-        $('#btnRezervisi').val(id);
-      
-        console.log("Podaci iz get by id "+response);
+        $('#btnRezervisi').val(id);      
     });
 
     request.fail(function (jqXHR, textStatus, errorThrown) {
