@@ -1,4 +1,6 @@
 $('.btnReserve').click(function () {
+    // var sessionid = $('html').attr('id');
+    // alert (sessionid);
     const $btn = $(this);
     const id = $btn.val();
 
@@ -31,7 +33,7 @@ function ucitajSedista(){
      request.done(function (response, textStatus, jqXHR) {
         $("#sediste").empty();
         response.forEach(function(value, index){
-            $('#sediste').append('<option value='+value.id+'>' + value.id + '</option>');
+            $('#sediste').append('<option value='+value.salaId+'>' + value.id + '</option>');
         });
 
      });

@@ -1,43 +1,54 @@
 <?php
- require "dbBroker.php";
- require "model/korisnik.php";
+require "dbBroker.php";
+require "model/korisnik.php";
 
- session_start();
+session_start();
 
- if(isset($_POST['username']) && isset($_POST['password'])) {
-     $uname=$_POST['username'];
-     $password=$_POST['password'];
+if (isset($_POST['username']) && isset($_POST['password'])) {
+    $uname = $_POST['username'];
+    $password = $_POST['password'];
 
     $rs = Korisnik::logInUser($uname, $password, $conn);
-
-
-      if($rs->num_rows==1) {
-          echo "Uspešno ste se ulogovali!";
-          $_SESSION['korisnik_korisnikId'] = $rs->fetch_assoc()['korisnikId']; 
-          header('Location: home.php');
-          exit();
-      } else {
-          //header('Location: index.php');
-          echo '<script type="text/javascript">alert("Uneli ste pogrešnu šifru!"); 
+    // echo "status: ".$rs->fetch_assoc()['status'];
+ 
+    if ($rs->num_rows == 1) {
+        // echo "Uspešno ste se ulogovali!";
+        $_SESSION['korisnik_korisnikId'] = $rs->fetch_assoc()['korisnikId'];
+        $status = $rs->fetch_assoc()['status'];
+        echo "status: ".$status;
+        
+        
+        if ($status == "admin") {
+            $location = 'home.php';
+           
+        } else {
+            $location = 'userindex.php';
+        }
+        header("Location: ".$location);
+        exit();
+    } else {
+        header('Location: index.php');
+        echo '<script type="text/javascript">alert("Uneli ste pogrešnu šifru!"); 
                                                 window.location.href = "http://localhost/domaci_iteh/";</script>';
-          exit();
-      }
- }
+        exit();
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="shortcut icon"  type="image/x-icon" href="img/fav.jpg" />
+    <!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/fav.jpg" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <title>To watch list</title>
     <script>
         request = $.ajax({
-        url: 'http://worldclockapi.com/api/jsonp/cet/now?callback=mycallback=?',
-        type: 'GET',
-        dataType: 'jsonp'       
-    });
+            url: 'http://worldclockapi.com/api/jsonp/cet/now?callback=mycallback=?',
+            type: 'GET',
+            dataType: 'jsonp'
+        });
         request.done(function(res) {
             console.log(res);
             // var data = JSON.parse(res);
@@ -53,16 +64,17 @@
 
 </head>
 <script></script>
+
 <body>
     <div class="login-form">
-    <div class="day-time">
-        <!-- <input type="text" id="date" class="form-control"  readonly>
+        <div class="day-time">
+            <!-- <input type="text" id="date" class="form-control"  readonly>
         <input type="text" id="day" class="form-control"  readonly>
         <input type="text" id="time" class="form-control"  readonly> -->
-        <p id="date"> </p>
-        <p id="day"> </p>
-        <p id="time"> </p>
-    </div>
+            <p id="date"> </p>
+            <p id="day"> </p>
+            <p id="time"> </p>
+        </div>
         <div class="main-div">
             <form method="POST" action="#">
                 <div class="imgcontainer">
@@ -70,7 +82,7 @@
                 </div>
 
                 <div class="container">
-                    <input type="text" placeholder="korisničko ime" name="username" class="form-control"  required>
+                    <input type="text" placeholder="korisničko ime" name="username" class="form-control" required>
                     <input type="password" placeholder="lozinka" name="password" class="form-control" required>
                     <button type="submit" class="btn btn-primary" name="submit">Log in</button>
                 </div>
@@ -79,4 +91,5 @@
         </div>
     </div>
 </body>
+
 </html>
