@@ -36,13 +36,12 @@ if (count($result) == 0)
 <head>
 	<meta charset="UTF-8">
     <link rel="shortcut icon" type="image/x-icon" href="img/drama.png"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<?php include 'components/header.php';?>
 
 	<title>Dobrodošli u pozorište</title>
 </head>
 <body>
-	<?php include_once("./components/navbar.php"); ?>
+	<?php include 'components/navbar.php'; ?>
 
 	<header id="myCarousel" class="carousel slide">
 			<!-- Indicators -->
@@ -99,11 +98,14 @@ if (count($result) == 0)
 		<div class="col-xs-6 col-md-3">
 			<div class="thumbnail">
 			<center>
-                <a href="#">
-				<img src="<?php echo 'img/'.$row->id.'.jpg'?>" alt="<?php echo $row->naziv?>" style="width:40%; height:auto; margin-bottom:5px"></a>
+				<img src="<?php echo 'img/'.$row->id.'.jpg'?>" alt="<?php echo $row->naziv?>" style="width:40%; height:auto; margin-bottom:5px">
 				<div class="caption">
 					<h4><?php echo $row->naziv;?></h4>		
 					<h5><?php echo $row->zanr;?></h5>
+					<div class="form-group"> 
+						<label for="utisakIzmeni">O predstavi:</label> 
+						<textarea id="utisakIzmeni" name="opis" class="form-control" placeholder="Ocena/Utisak o filmu" style="width: 100%; height: 150px;"><?php echo $row->opis?></textarea>
+					</div>
 					<p>
 						<button class="btnReserve" type="button" value="<?php echo $row->id?>" class="btn btn-default dropdown-toggle" style="color:#D11111; font-size:18px">Rezervišite sedište</button>
 					</p>
@@ -139,35 +141,18 @@ if (count($result) == 0)
                                 <div class="form-group">
 									<p>Naziv predstave:</p>
                                     <input id="filmIzmeni" type="text" name="naziv" required class="form-control"
-                                           placeholder="Naziv filma" value=""/>
+                                           placeholder="Naziv filma" value="" readonly/>
                                 </div>
-                                <div class="form-group">
-									<p>Zanr predstave:</p>
-                                    <input id="zanrIzmeni" type="text" name="zanr" required class="form-control" placeholder="Žanr filma"
-                                           value=""/>
-                                </div>
+                                
                                 <div class="form-group">
 									<p>Trajanje predstave (u minutima):</p>
                                     <input id="trajanjeIzmeni" type="number" name="trajanje" required min=0 class="form-control"
-                                           placeholder="Trajanje filma" value=""/>
+                                           placeholder="Trajanje filma" value="" readonly/>
                                            
                                 </div>
                                 
 
                                 <div class="form-group">
-									<div class="dropdown">
-  										<button  id="dropdownMenuButton" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" 
-										  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: #B79256; border: #B79256;"><i
-                                                class="fas fa-ticket-alt"></i>
-    										Izbor sedišta
-  										</button>
-  										<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    
-  										</div>
-									</div>
-								</div>
-
-								<div class="form-group">
                                     <button id="btnRezervisi" type="submit" class="btn btn-success btn-block"
                                             style="background-color: #FE3649; border: #FE3649;"><i
                                                 class="	fas fa-couch"></i> Rezervišite sedište
@@ -177,10 +162,18 @@ if (count($result) == 0)
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-									<p>O predstavi:</p>
-                                    <textarea id="utisakIzmeni" name="opis" class="form-control" placeholder="Ocena/Utisak o filmu"
-                                              style="width: 100%; height: 150px;"></textarea>
-                                </div>
+									<p>Izaberite datum izvodjenja:</p>
+									<select id="datumiIzvodjenja"> 
+										<option value="0">- Select -</option> 
+									</select>
+								</div>
+
+								<div class="form-group">
+									<p>Izaberite sedište:</p>
+									<select id="sediste"> 
+										<option value="0">- Select -</option> 
+									</select>
+								</div>
                             </div>
                         </div>
                     </form>
@@ -233,7 +226,6 @@ if (count($result) == 0)
 	<?php include_once("./components/footer.php"); ?>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
 	<script src="js/userpage.js"></script>
 	<script>
 		$('.carousel').carousel({

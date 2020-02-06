@@ -13,8 +13,6 @@ $('.btnReserve').click(function () {
         $('#filmIzmeni').val(predstava.naziv);
         console.log(predstava.naziv);
 
-        $('#zanrIzmeni').val(predstava.zanr.trim());
-        console.log(predstava.zanr.trim());
         $('#trajanjeIzmeni').val(predstava.trajanje.trim());
         console.log(predstava.trajanje.trim());
         $('#utisakIzmeni').val(predstava.opis.trim());
@@ -28,6 +26,29 @@ $('.btnReserve').click(function () {
         console.error('Pojavila se sledeća greška: ' + textStatus, errorThrown);
     });
 
+    request = $.ajax({
+        url: 'http://localhost/domaci3/izvodjenja/'+id+'.json',
+        type: 'get',
+        dataType: 'json'
+    });
+
+    request.done(function (response, textStatus, jqXHR) {
+        $("#datumiIzvodjenja").empty();
+        response.forEach(function(value, index){
+            $('#datumiIzvodjenja').append('<option>' + value.dat + '</option>');
+        });
+
+    });
+
+    request.fail(function (jqXHR, textStatus, errorThrown) {
+        console.error('Pojavila se sledeća greška: ' + textStatus, errorThrown);
+    });
+
     $('#reservation').modal('toggle');
     return false;
+});
+
+$('#btnRezervisi').submit(function(){
+    
+
 });

@@ -13,12 +13,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="navbar-collapse-1">
           <ul class="nav navbar-nav" id="left-nav">
-            <!-- <li>
-              <a href="mov-hindi.php">HINDI</a>
-            </li>
-            <li>
-              <a href="mov-english.php">ENGLISH</a>
-            </li> -->
+            
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li>
