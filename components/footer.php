@@ -25,7 +25,7 @@
             <h5>Pozoriste</h5>
             <ul class="list-unstyled">
               <li><a href="contact.php">Kontakt</a></li>
-              <li><a href="#loginModal" data-toggle="modal" data-target="#loginModal">Sign In</a></li>
+              <li><a href="#">Nesto</a></li>
             </ul>
           </div>
           <div class="col-xs-12 col-sm-4">
@@ -37,7 +37,7 @@
             </div>
           </div>
           <div class="col-xs-12">
-            <p style="padding:20px;"></p>
+            <!-- <p style="padding:20px;"></p> -->
           </div>
         </div>
       </div>

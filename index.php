@@ -9,24 +9,22 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     $password = $_POST['password'];
 
     $rs = Korisnik::logInUser($uname, $password, $conn);
-    // echo "status: ".$rs->fetch_assoc()['status'];
-    
-    
+
     if ($rs->num_rows == 1) {
         $row = $rs->fetch_assoc();
         // echo "Uspešno ste se ulogovali!";
         $_SESSION['korisnik_korisnikId'] = $row['korisnikId'];
         $status = $row['status'];
         echo "status: ".$status;
-        
-        
+
         if ($status == "admin") {
             $location = 'home.php';
-           
+            // echo "ovde admin, lokacija: " . $location;
         } else {
             $location = 'userindex.php';
+            // echo "ovde user, lokacija: " . $location;
         }
-        header("Location: ".$location);
+        header("Location: " . $location);
         exit();
     } else {
         header('Location: index.php');
@@ -42,7 +40,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 <head>
     <meta charset="UTF-8">
     <!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
-    <link rel="shortcut icon" type="image/x-icon" href="img/fav.jpg" />
+    <link rel="shortcut icon" type="image/x-icon" href="img/drama.jpg" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <title>To watch list</title>
     <script>

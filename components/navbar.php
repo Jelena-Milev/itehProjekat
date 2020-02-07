@@ -17,10 +17,16 @@
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li>
-              <a href="#"><span class="fa fa-ticket" aria-hidden="true"></span>&nbsp;&nbsp;REZERVACIJE</a>
+              <a href="userindex.php"><span class="" aria-hidden="true"></span>&nbsp;&nbsp;PREDSTAVE</a>
+            </li>
+            <li>
+              <a href="reservations.php"><span class="fa fa-ticket" aria-hidden="true"></span>&nbsp;&nbsp;REZERVACIJE</a>
             </li>
             <li>
               <a href="contact.php"><span class="fa fa-phone" aria-hidden="true"></span>&nbsp;&nbsp;KONTAKT</a>
+            </li>
+            <li>
+              <a href="home.php?logout=true"><span class="fa fa-sign-out" aria-hidden="true"></span>&nbsp;&nbsp;ODJAVA</a>
             </li>
             
       <!-- <?php

@@ -7,6 +7,7 @@ require "model/predstava.php";
 session_start();
 
 if (!isset($_SESSION['korisnik_korisnikId'])) { 
+    // echo "nije setovan korisnik";
     header('Location: index.php');
     exit();
 } elseif (isset($_GET['logout']) && !empty($_GET['logout'])) {
@@ -37,7 +38,7 @@ else {
 <head>
 
     <meta charset="UTF-8">
-    <link rel="shortcut icon" type="image/x-icon" href="img/fav.jpg"/>
+    <link rel="shortcut icon" type="image/x-icon" href="img/drama.jpg"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/home.css">
     <title>To watch list</title>
