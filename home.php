@@ -40,7 +40,8 @@ else {
     <meta charset="UTF-8">
     <link rel="shortcut icon" type="image/x-icon" href="img/drama.jpg"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/home.css">
+    <!--<link rel="stylesheet" type="text/css" href="css/home.css"> -->
+    <?php include 'components/header.php'; ?>
     <title>To watch list</title>
 
 </head>

@@ -39,10 +39,11 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 
 <head>
     <meta charset="UTF-8">
-    <!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
-    <link rel="shortcut icon" type="image/x-icon" href="img/drama.jpg" />
+    <link rel="stylesheet" type="text/css" href="css/style.css">  <!--ovo je moja login stranica-->
+    <link rel="shortcut icon" type="image/x-icon" href="img/drama.png" />
+ 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <title>To watch list</title>
+    <title>Pozorište na Terazijama</title>
     <script>
         request = $.ajax({
             url: 'http://worldclockapi.com/api/jsonp/cet/now?callback=mycallback=?',
@@ -57,7 +58,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
             var dateSplited = date.split("T");
             var time = dateSplited[1].split("+")
             $('#day').text(day);
-            $('#time').text(time[0]);
+            //$('#time').text(time[0]);
             $('#date').text(dateSplited[0]);
         });
     </script>
@@ -84,14 +85,16 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
             <!-- <input type="text" id="date" class="form-control"  readonly>
         <input type="text" id="day" class="form-control"  readonly>
         <input type="text" id="time" class="form-control"  readonly> -->
+        <b>
             <p id="date"> </p>
             <p id="day"> </p>
-            <p id="time"> </p>
+</b>
+           <!--<p id="time"> </p>-->
         </div>
         <div class="main-div">
             <form method="POST" action="#">
                 <div class="imgcontainer">
-                    <img src="img/kokice.jpg" alt="To watch list" class="watch">
+                    <img src="img/Picture2.png" alt="To watch list" class="watch">
                 </div>
 
                 <div class="container">
