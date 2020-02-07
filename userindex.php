@@ -37,7 +37,7 @@ if (count($result) == 0) {
 	<link rel="shortcut icon" type="image/x-icon" href="img/drama.png" />
 	<?php include 'components/header.php'; ?>
 
-	<title>Dobrodošli u pozorište</title>
+	<title>Pozorište na Terazijama</title>
 </head>
 
 <body>
@@ -54,21 +54,21 @@ if (count($result) == 0) {
 		<!-- Wrapper for slides -->
 		<div class="carousel-inner">
 			<div class="item active">
-				<!-- <div class="fill" style="background-image:url('img/post-strange.jpg');"></div> -->
+				<div class="fill" style="background-image:url('img/pozadina2.jpg');"></div> 
 				<div class="carousel-caption">
-					<h2>Rezervacija karata</h2>
+				<!--	<h2>Rezervacija karata</h2>-->
 				</div>
 			</div>
 			<div class="item">
-				<!-- <div class="fill" style="background-image:url('img/post-parmanu.jpg');"></div> -->
+			<div class="fill" style="background-image:url('img/pozadina1.jpeg');"></div>
 				<div class="carousel-caption">
-					<h2>Najnovije predstave</h2>
+					<!--<h2>Najnovije predstave</h2>-->
 				</div>
 			</div>
 			<div class="item">
-				<!-- <div class="fill" style="background-image:url('img/post-dunkirk.png');"></div> -->
+				<div class="fill" style="background-image:url('img/pozadina4.jpg');"></div> 
 				<div class="carousel-caption">
-					<h2>Rekli su o nama</h2>
+					<!--<h2>Rekli su o nama</h2>-->
 				</div>
 			</div>
 		</div>
@@ -85,7 +85,7 @@ if (count($result) == 0) {
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12">
-				<h2 class="page-header">Rezervišite svoje karte</h2>
+				<h2 class="page-header" style="text-align: center;">Rezervišite svoje karte</h2>
 			</div>
 			<div class="col-xs-12">
 				<h5 class="center-align text-uppercase lead">Predstave</h5>
