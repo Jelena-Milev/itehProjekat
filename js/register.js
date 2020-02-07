@@ -70,7 +70,7 @@ $(document).ready(function () {
             console.log("okej su mu podaci")
             var json = {};
             json["username"] = $("#username").val();
-            json["password"] = $("#password").val();
+            json["password"] = $.sha256($('#password').val());
             json["fullName"] = $("#fullName").val();
             json["email"] = $("#email").val();
             json["status"] = "user";

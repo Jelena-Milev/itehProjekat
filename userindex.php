@@ -98,7 +98,7 @@ if (count($result) == 0) {
 				<div class="col-xs-6 col-md-3">
 					<div class="thumbnail">
 						<center>
-							<img src="<?php echo 'img/' . $row->id . '.jpg' ?>" alt="<?php echo $row->naziv ?>" style="width:40%; height:auto; margin-bottom:5px">
+							<img src="<?php echo 'img/' . $row->id . '.jpg' ?>" alt="<?php echo $row->naziv ?>" style="width:40%; height:150px; margin-bottom:5px">
 							<div class="caption">
 								<h4><?php echo $row->naziv; ?></h4>
 								<h5><?php echo $row->zanr; ?></h5>

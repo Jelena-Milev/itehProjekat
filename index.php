@@ -6,7 +6,7 @@ session_start();
 
 if (isset($_POST['username']) && isset($_POST['password'])) {
     $uname = $_POST['username'];
-    $password = $_POST['password'];
+    $password = hash ("sha256", $_POST['password'], false) ;
 
     $rs = Korisnik::logInUser($uname, $password, $conn);
 
