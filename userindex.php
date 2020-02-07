@@ -152,7 +152,7 @@ if (count($result) == 0) {
 
 
 									<div class="form-group">
-										<button id="btnRezervisi" type="submit" class="btn btn-success btn-block" style="background-color: #FE3649; border: #FE3649;"><i class="	fas fa-couch"></i> Rezervišite sedište
+										<button id="btnRezervisi" type="submit" class="btn btn-success btn-block" style="background-color: #FE3649; border: #FE3649;"><i class="fas fa-couch"></i> Rezervišite sedište
 										</button>
 									</div>
 
@@ -161,7 +161,7 @@ if (count($result) == 0) {
 									<div class="form-group">
 										<p>Izaberite datum izvodjenja:</p>
 										<select id="datumiIzvodjenja">
-											<option value="0">- Select -</option>
+											<option value="0"> Izaberite sedište: </option>
 										</select>
 									</div>
 
