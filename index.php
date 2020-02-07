@@ -10,11 +10,13 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 
     $rs = Korisnik::logInUser($uname, $password, $conn);
     // echo "status: ".$rs->fetch_assoc()['status'];
- 
+    
+    
     if ($rs->num_rows == 1) {
+        $row = $rs->fetch_assoc();
         // echo "Uspešno ste se ulogovali!";
-        $_SESSION['korisnik_korisnikId'] = $rs->fetch_assoc()['korisnikId'];
-        $status = $rs->fetch_assoc()['status'];
+        $_SESSION['korisnik_korisnikId'] = $row['korisnikId'];
+        $status = $row['status'];
         echo "status: ".$status;
         
         
