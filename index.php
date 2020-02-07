@@ -15,7 +15,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
         // echo "Uspešno ste se ulogovali!";
         $_SESSION['korisnik_korisnikId'] = $row['korisnikId'];
         $status = $row['status'];
-        echo "status: ".$status;
+        echo "status: " . $status;
 
         if ($status == "admin") {
             $location = 'home.php';
@@ -66,6 +66,19 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 <script></script>
 
 <body>
+
+    <?php
+    if (isset($_GET["msg"]) and !empty($_GET["msg"])) {
+    ?>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <?php echo $_GET["msg"]; ?>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    <?php
+    }
+    ?>
     <div class="login-form">
         <div class="day-time">
             <!-- <input type="text" id="date" class="form-control"  readonly>
