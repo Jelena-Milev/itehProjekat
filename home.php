@@ -38,26 +38,26 @@ else {
 <head>
 
     <meta charset="UTF-8">
-    <link rel="shortcut icon" type="image/x-icon" href="img/drama.jpg"/>
+    <link rel="shortcut icon" type="image/x-icon" href="img/drama.png"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <!--<link rel="stylesheet" type="text/css" href="css/home.css"> -->
-    <?php include 'components/header.php'; ?>
-    <title>To watch list</title>
+    <link rel="stylesheet" type="text/css" href="css/home.css">
+       <?php include 'components/header.php'; ?>
+    <title>Pozorište na Terazijama</title>
 
 </head>
 
 <body>
 
-<div class="jumbotron"><h1>TO WATCH LIST</h1>
+<div class="jumbotron"><h1 style="color: black; ">Pozorište na Terazijama </h1>
     <a href="home.php?logout=true" style="float: right; padding: 10px">
-        <button id="logout" type="button" class="btn btn-danger" style="background-color: #352621; border: #352621;">Log out</button>
+        <button id="logout" type="button" class="btn btn-danger" style="background-color: #230000; border: #230000;">Odjava</button>
     </a>
 </div>
 
 <div class="row" >
     <div class="col-md-3">
         <button id="btn" class="btn btn-info btn-block"
-                style="background-color: #352621; border: #352621;"><i
+                style="background-color: #230000; border: #230000;"><i
                     class="glyphicon glyphicon-th-list"></i> Pregled
         </button>
     </div>
@@ -67,7 +67,7 @@ else {
 
     <div class="col-md-1">
         <button id="btn-dodaj" type="button" class="btn btn-success btn-block"
-                style="background-color: #352621;border: #352621; " data-toggle="modal" data-target="#myModal"><i
+                style="background-color: #230000;border: #230000; " data-toggle="modal" data-target="#myModal"><i
                     class="glyphicon glyphicon-plus"></i> Dodaj
         </button>
 
@@ -75,15 +75,15 @@ else {
 
     <div class="col-md-1">
         <button id="btn-pretraga" class="btn btn-warning btn-block"
-                style="background-color:  #352621;border: #352621; "><i
+                style="background-color:  #230000;border: #230000; "><i
                     class="glyphicon glyphicon-search"></i> Pretraži
         </button>
-        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Pretraži film po žanru" hidden>
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Pretraži predstavu po žanru" hidden>
     </div>
 
     <div class="col-md-1">
         <button id="btn-izmeni" type="button" class="btn btn-warning "
-                style="background-color:  #352621;border: #352621;" data-toggle="modal" data-target="#izmeniModal"><i
+                style="background-color:  #230000;border: #230000;" data-toggle="modal" data-target="#izmeniModal"><i
                     class="glyphicon glyphicon-pencil"></i> Izmeni
         </button>
        <!-- <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Pretrazi krofne" hidden>-->
@@ -91,8 +91,8 @@ else {
 
     <div class="col-md-1">
         <button id="btn-obrisi" type="button" class="btn btn-warning btn-danger"
-                style="background-color:  #352621;border: #352621; "><i
-                    class="glyphicon glyphicon-trash"></i> Obrisi 
+                style="background-color:  #230000;border: #230000; "><i
+                    class="glyphicon glyphicon-trash"></i> Obriši 
         </button>
        <!-- <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Pretrazi krofne" hidden>-->
     </div>
@@ -102,16 +102,16 @@ else {
 </div>
 
 <div id="pregled" class="panel panel-info" style="margin-top: 1%; border:none;">
-    <div class="panel-heading" style="background-color:#352621; color:white; border-bottom:white;">Pregled filmova</div> 
+    <div class="panel-heading" style="background-color:#230000; color:white; border-bottom:white;">Pregled predstava</div> 
     <div class="panel-body">
         <table id="myTable" class="table table-striped">
             <thead>
             <tr>
                 <!--<th scope="col">Id filma</th>-->
-                <th scope="col">Naziv filma</th>
-                <th scope="col">Žanr filma</th>
-                <th scope="col">Trajanje filma (min)</th>
-                <th scope="col">Ocena/Utisak o filmu</th>
+                <th scope="col">Naziv predstave</th>
+                <th scope="col">Žanr predstave</th>
+                <th scope="col">Trajanje predstave (min)</th>
+                <th scope="col">Opis predstave</th>
                 <th scope="col">Izaberi</th>
             </tr>
             </thead>
@@ -159,28 +159,28 @@ else {
             <div class="modal-body" >
                 <div class="container-form" > <!--ovo je pozadina-->
                     <div class="film-image"> 
-                        <img src="img/fav.jpg" alt="rocket_contact"/>
+                        <img src="img/drama-bela.png" alt="rocket_contact"/>
                     </div>
                     <form action="#" method="post" id="dodajForm">  
-                        <h3 style="color: #FE3649">Dodavanje filma</h3>
+                        <h3 style="color: white">Dodavanje predstave</h3>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <input type="text" name="naziv" required class="form-control"
-                                           placeholder="Naziv filma" value=""/>
+                                           placeholder="Naziv predstave" value=""/>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" name="zanr" required class="form-control" placeholder="Žanr filma"
+                                    <input type="text" name="zanr" required class="form-control" placeholder="Žanr predstave"
                                            value=""/>
                                 </div>
                                 <div class="form-group">
                                     <input type="number" name="trajanje" required min=0 class="form-control"
-                                           placeholder="Trajanje filma" value=""/>
+                                           placeholder="Trajanje predstave" value=""/>
                                            
                                 </div>
                                 <div class="form-group">
                                     <button id="btnDodaj" type="submit" class="btn btn-success btn-block"
-                                            style="background-color: #FE3649; border: #FE3649;"><i
+                                            style="background-color: #230000; border: #230000;"><i
                                                 class="glyphicon glyphicon-plus"></i> Dodaj
                                     </button>
                                 </div>
@@ -188,7 +188,7 @@ else {
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <textarea name="opis" class="form-control" placeholder="Ocena/Utisak o filmu"
+                                    <textarea name="opis" class="form-control" placeholder="Opis predstave"
                                               style="width: 100%; height: 150px;"></textarea>
                                 </div>
                             </div>
@@ -216,31 +216,31 @@ else {
             <div class="modal-body" >
                 <div class="container-form"> <!--ovde je bilo container krofna-form-->
                     <div class="film-image">
-                        <img src="img/fav.jpg" alt="rocket_contact"/>
+                        <img src="img/drama-bela.png" alt="rocket_contact"/>
                     </div>
                     <form action="#" method="post" id="izmeniForm">
-                        <h3 style="color: #FE3649">Izmena filma</h3>
+                        <h3 style="color: white">Izmena predstave</h3>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <input id="id" type="text" name="id" required class="form-control"
-                                           placeholder="Id filma" value="" readonly/>
+                                           placeholder="Id predstave" value="" readonly/>
                                 </div>
                                 <div class="form-group">
                                     <input id="filmIzmeni" type="text" name="naziv" required class="form-control"
-                                           placeholder="Naziv filma" value=""/>
+                                           placeholder="Naziv predstave" value=""/>
                                 </div>
                                 <div class="form-group">
                                     <input id="zanrIzmeni" type="text" name="zanr" required class="form-control"
-                                           placeholder="Žanr filma" value=""/>
+                                           placeholder="Žanr predstave" value=""/>
                                 </div>
                                 <div class="form-group">
                                     <input id="trajanjeIzmeni" type="number" name="trajanje" required min=0 class="form-control"
-                                           placeholder="Trajanje filma" value=""/>
+                                           placeholder="Trajanje predstave" value=""/>
                                 </div>
                                 <div class="form-group">
                                     <button id="btnIzmeni" type="submit" class="btn btn-success btn-block"
-                                            style="background-color: #FE3649; border: #FE3649;"><i
+                                            style="background-color: #230000; border: #230000;"><i
                                                 class="glyphicon glyphicon-plus"></i> Izmeni
                                     </button>
 
@@ -250,7 +250,7 @@ else {
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <textarea id="utisakIzmeni" name="opis" class="form-control"
-                                              placeholder="Ocena/Utisak o filmu"
+                                              placeholder="Opis predstave"
                                               style="width: 100%; height: 150px;"></textarea>
                                               <!-- -->
                                 </div>
