@@ -23,6 +23,9 @@ body {
 .img-hover:hover {
     opacity: 0.8;
 }
+.modal-content{
+    background-image: url("../img/zav3.jpg");
+}
 
 /* Home Page Carousel */
 

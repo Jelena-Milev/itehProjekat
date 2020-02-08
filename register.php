@@ -2,18 +2,24 @@
 <html>
 <head>
 	<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>Registracija</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="shortcut icon" type="image/x-icon" href="img/drama.png" />
+	<link rel="stylesheet" type="text/css" href="css/register.css"> 
+	<title>Pozorište na Terazijama</title>
 	
-     <?php include 'components/header.php'; ?>
+	 <?php include 'components/header.php'; ?>
+	
  </head>
 <body>
 <div class="overlay"><div class="loader"></div></div>
 	
-	<p></p>
+<!--	<p></p>-->
+
+<div class="main-div">
+
 	<div class="container">
-		<div class="card mx-auto" style="width: 30rem;">
-	        <div class="card-header">Register</div>
+		<div class="card mx-auto " width="100%" style="width: 30rem;" >
+	        <div class="card-header" style="text-align:center;"> <h1>Registrovanje</h1></div>
 		      <div class="card-body">
 		        <form id="register_form" onsubmit="return false" method="post" autocomplete="off">
                 <div class="form-group">
@@ -42,14 +48,15 @@
 		            <small id="p2_error" class="form-text text-muted"></small>
 		          </div>
 		          
-		          <button type="submit" name="user_register" class="btn btn-primary"><span class="fa fa-user"></span>&nbsp;Register</button>
-		          <span><a href="index.php">Login</a></span>
+		          <button type="submit" name="user_register" class="btn btn-primary" id="dugme"><span class="fa fa-user"></span>&nbsp;Registruj se</button>
+		          <span style="padding-left:20px;"><a href="index.php">Prijavi se</a></span>
 		        </form>
 		      </div>
 	      <div class="card-footer text-muted">
 	        
 	      </div>
 	    </div>
+	</div>
 	</div>
 
     <link rel="stylesheet" href="jquery-ui/jquery-ui.min.css">

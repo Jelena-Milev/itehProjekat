@@ -136,37 +136,37 @@ if (count($result) == 0) {
 							<!-- <img src="img/fav.jpg" alt="rocket_contact"/> -->
 						</div>
 						<form action="#" method="post" id="rezervacijaForm">
-							<h3 style="color: #FE3649">Rezervisanje sedišta</h3>
+							<h3 style="color: white">Rezervisanje sedišta</h3>
 							<div class="row">
 								<div class="col-md-6">
 									<div class="form-group">
-										<p value="" name="idPredstave">Naziv predstave:</p>
+										<p value="" name="idPredstave" style="color: white">Naziv predstave:</p>
 										<input id="filmIzmeni" type="text" name="naziv" required class="form-control" placeholder="Naziv filma" value="" readonly />
 									</div>
 
 									<div class="form-group">
-										<p>Trajanje predstave (u minutima):</p>
+										<p style="color: white">Trajanje predstave (u minutima):</p>
 										<input id="trajanjeIzmeni" type="number" name="trajanje" required min=0 class="form-control" placeholder="Trajanje filma" value="" readonly />
 
 									</div>
 
 
 									<div class="form-group">
-										<button id="btnRezervisi" type="submit" class="btn btn-success btn-block" style="background-color: #FE3649; border: #FE3649;"><i class="fas fa-couch"></i> Rezervišite sedište
+										<button id="btnRezervisi" type="submit" class="btn btn-success btn-block" style="background-color: #230000; border: #230000;"><i class="fas fa-couch"></i> Rezervišite sedište
 										</button>
 									</div>
 
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
-										<p>Izaberite datum izvodjenja:</p>
+										<p style="color: white">Izaberite datum izvodjenja:</p>
 										<select id="datumiIzvodjenja">
 											<option value="0"> Izaberite sedište: </option>
 										</select>
 									</div>
 
 									<div class="form-group">
-										<p>Izaberite sedište:</p>
+										<p style="color: white">Izaberite sedište:</p>
 										<select id="sediste">
 											<option value="0">- Select -</option>
 										</select>
@@ -177,7 +177,7 @@ if (count($result) == 0) {
 					</div>
 				</div>
 				<div class="modal-footer" style="border:none;">
-					<!-- <button type="button" class="btn btn-default" style="background-color: #FE3649; border: #FE3649; color:white;" data-dismiss="modal">Close</button>-->
+					<button type="button" class="btn btn-default" style="background-color: #230000; border: #230000; color:white;" data-dismiss="modal">Zatvori</button>
 				</div>
 			</div>
 

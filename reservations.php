@@ -35,10 +35,11 @@ if (count($result) == 0)
 <head>
 	<meta charset="UTF-8">
     <link rel="shortcut icon" type="image/x-icon" href="img/drama.jpg"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="shortcut icon" type="image/x-icon" href="img/drama.png" />
 	<?php include 'components/header.php';?>
 
-	<title>Dobrodošli u pozorište</title>
+	<title>Pozorište na Terazijama</title>
 </head>
 <body>
 	<?php include_once("./components/navbar.php"); ?>
@@ -82,15 +83,15 @@ if (count($result) == 0)
 	<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
-					<h2 class="page-header">Rezervišite svoje karte</h2>
+					<h2 class="page-header" style="color:white; text-align:center">Rezervišite svoje karte</h2>
 				</div>
 				<div class="col-xs-12">
-					<h5 class="center-align text-uppercase lead">Rezervacije</h5>
+					<h5 class="center-align text-uppercase lead" style="color:white; text-align:center">Rezervacije</h5>
 				</div>				
 			</div>
-			<table id="myTable" class="table table-striped">
+			<table id="myTable" class="table table-striped"  style="background-color:white;">
             <thead>
-            <tr>
+            <tr style="color:black;">
                 <th scope="col">Datum</th>
                 <th scope="col">Naziv predstave</th>
                 <th scope="col">Sala</th>

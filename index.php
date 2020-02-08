@@ -94,13 +94,13 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
         <div class="main-div">
             <form method="POST" action="#">
                 <div class="imgcontainer">
-                    <img src="img/Picture2.png" alt="To watch list" class="watch">
+                    <img src="img/Picture2.png" alt="Predstave" class="watch">
                 </div>
 
                 <div class="container">
                     <input type="text" placeholder="korisničko ime" name="username" class="form-control" required>
                     <input type="password" placeholder="lozinka" name="password" class="form-control" required>
-                    <button type="submit" class="btn btn-primary" name="submit">Log in</button>
+                    <button type="submit" class="btn btn-primary" name="submit">Prijavi se</button>
                 </div>
 
             </form>
