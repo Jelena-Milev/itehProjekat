@@ -165,7 +165,7 @@ if (count($result) == 0)
 			</div>
 	</div> -->
 
-	<?php include_once("./components/footer.php"); ?>
+	<?php include_once("./components/footer2.php"); ?>
 	<script>
 		$('.carousel').carousel({
 			interval: 5000 //changes the speed

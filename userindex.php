@@ -85,10 +85,10 @@ if (count($result) == 0) {
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12">
-				<h2 class="page-header" style="text-align: center;">Rezervišite svoje karte</h2>
+				<h2 class="page-header" style="text-align: center; color:white;">Rezervišite svoje karte</h2>
 			</div>
 			<div class="col-xs-12">
-				<h5 class="center-align text-uppercase lead">Predstave</h5>
+				<h5 class="center-align text-uppercase lead"  style="text-align: center; color:white;">Predstave</h5>
 			</div>
 		</div>
 		<div class="row">
@@ -107,7 +107,7 @@ if (count($result) == 0) {
 									<textarea id="utisakIzmeni" name="opis" class="form-control" placeholder="Ocena/Utisak o filmu" style="width: 100%; height: 150px;"><?php echo $row->opis ?></textarea>
 								</div>
 								<p>
-									<button class="btnReserve" type="button" value="<?php echo $row->id ?>" class="btn btn-default dropdown-toggle" style="color:#D11111; font-size:18px">Rezervišite sedište</button>
+									<button class="btnReserve" type="button" value="<?php echo $row->id ?>" class="btn btn-default dropdown-toggle" style="color:white; background-color: #3F1918; font-size:18px">Rezervišite sedište</button>
 								</p>
 							</div>
 						</center>
@@ -188,39 +188,39 @@ if (count($result) == 0) {
 
 	<div class="bottom">
 		<!-- Call to Action Section -->
-		<div class="pre-footer small">
+		<div class="pre-footer small" style="background-color:#833306; color:black; opacity:0.9;">
 			<div class="row">
 				<div class="col-xs-12">
-					<h5 class="center-align bold" style="color:#555;">Lorem ipsum dolor sit amet consectetur </h5>
+					<h5 class="center-align bold"style="color:white" >O nama</h5>
 				</div>
 				<div class="row row-content">
-					<div class="col-xs-12">
-						Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi nihil quidem pariatur sunt sed nulla eaque officiis praesentium deserunt, modi maiores saepe officia minus, veniam rerum fugiat nobis? Optio, quis. Lorem ipsum dolor sit amet consectetur adipisicing elit. In eveniet fugiat eum minima expedita libero quaerat, beatae sint itaque, ex aspernatur odit deserunt commodi consectetur velit necessitatibus ab amet recusandae.
+					<div class="col-xs-12 " style="text-align:center;"> 
+						"Tražim da sala bude na Terazijama. Humorističko ili bulevarsko pozorište, koje nedostaje Beogradu, mora biti tamo gde ljudi ubijau vreme, a mi im onda ponudimo smešno ubijanje samoće!"
 					</div>
 				</div>
 				<div class="row row-content">
-					<div class="col-sm-4 col-xs-12">
-						<h5 class="bold">Lorem ipsum dolor sit</h5>
-						<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi nihil quidem pariatur sunt sed nulla eaque officiis praesentium deserunt, modi maiores saepe officia minus, veniam rerum fugiat nobis? Optio, quis. Lorem ipsum dolor sit amet consectetur adipisicing elit. In eveniet fugiat eum minima expedita libero quaerat, beatae sint itaque, ex aspernatur odit deserunt commodi consectetur velit necessitatibus ab amet recusandae.
+					<div class="col-sm-4 col-xs-12" id="pozoriste" >
+						<h5 class="bold" style="color:white" >O POZORIŠTU</h5>
+						<p>Pozorište na Terazijama osnovano je 23. decembra 1949. godine kao Humorističko pozorište. Danas je Pozorište na Terazijama sinonim za mjuzikl i muzičke predstave, ne samo u Beogradu već u celoj zemlji. Osim izvođenja brodvejskih hitova kao što je na primer Kabare, sada se u pozorištu na Terazijama izvode predstave koje su i širi svetski hitovi kao što je predstava Fantom iz Opere.
 						</p>
 					</div>
-					<div class="col-sm-4 col-xs-12">
-						<h5 class="bold">Lorem ipsum dolor sit</h5>
+					<div class="col-sm-4 col-xs-12" id="pozoriste">
+						<h5 class="bold" style="color:white" >ANSAMBLI</h5>
 						<p>
-							Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi nihil quidem pariatur sunt sed nulla eaque officiis praesentium deserunt, modi maiores saepe officia minus, veniam rerum fugiat nobis? Optio, quis. Lorem ipsum dolor sit amet consectetur adipisicing elit. In eveniet fugiat eum minima expedita libero quaerat, beatae sint itaque, ex aspernatur odit deserunt commodi consectetur velit necessitatibus ab amet recusandae.
+							Tokom sedam decenija postojanja, pozorište na Terazijama je svoj dramski, orkestarski, baletski i horski ansambl neprekidno obogaćivalo novim, prvenstveno mladim, talentovanim i školovanim umetnicima. To mu je uvek donosilo dominantnu notu umetničke svežine, koju je publika nepogrešivo umela da prepozna. Trenutni ansambli su dopunjeni i tehničkim sektorom.
 						</p>
 					</div>
-					<div class="col-sm-4 col-xs-12">
-						<h5 class="bold">Lorem ipsum dolor sit</h5>
+					<div class="col-sm-4 col-xs-12" id="pozoriste">
+						<h5 class="bold" style="color:white" >REPERTOAR</h5>
 						<p>
-							Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi nihil quidem pariatur sunt sed nulla eaque officiis praesentium deserunt, modi maiores saepe officia minus, veniam rerum fugiat nobis? Optio, quis. Lorem ipsum dolor sit amet consectetur adipisicing elit. In eveniet fugiat eum minima expedita libero quaerat, beatae sint itaque, ex aspernatur odit deserunt commodi consectetur velit necessitatibus ab amet recusandae.
+							Pozorište na Terazijama pored stranih hitova poslednjih deceniju i više, neguje i razvija i predstave zasnovane na domaćoj literaturi koje prepoznajemo kao "domaći mjuzikl", među kojima su: Lutka sa naslovne strane, Maratonci trče počasni krug, Na slovo, na slovo, kao i još uvek aktuelnih predstava poput Zone Zamfirove, Glavo luda ili Mister Dolar.
 						</p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<?php include_once("./components/footer.php"); ?>
+	<?php include_once("./components/footer2.php"); ?>
 	<link rel="stylesheet" href="jquery-ui/jquery-ui.min.css">
 	<script src="jquery-ui/external/jquery/jquery.js"></script>
 	<script src="jquery-ui/jquery-ui.min.js"></script>
