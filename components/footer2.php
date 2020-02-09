@@ -7,7 +7,7 @@
     </div>
     <div class="row info">
       <div class="col-lg-4 stubic">
-        <a href="#"><img src="/itehProjekat/img/drama-bela.png"></a>
+        <a href="#"><img src="/domaci_iteh/img/drama-bela.png"></a>
       </div>
     
       <div class="col-lg-3 stubic stubic1">

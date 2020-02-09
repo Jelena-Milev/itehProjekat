@@ -1,3 +1,8 @@
+// $('#btnChart').click(function () {
+//     $('#chartModal').toggle();
+//     return false;
+// });
+
 $('#btn').click(function () {
     $('#pregled').toggle();
 });

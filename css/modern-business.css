@@ -87,7 +87,7 @@ header.carousel .fill {
     padding-top: 50px;
     padding-bottom: 30px;
     color: #ffffff;
-    background-image: url('/itehProjekat/img/zav3.jpg');
+    background-image: url('../img/zav3.jpg');
     background-size: 100%; 
     display: block;
     position: relative;

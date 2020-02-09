@@ -66,4 +66,13 @@ class Predstava
         $q = "UPDATE predstava set naziv='$naziv', zanr='$zanr', opis='$opis', trajanje=$trajanje where id=$id";
         return $conn->query($q);
     }
+
+    public static function getCountForChart(mysqli $conn)
+    {
+        $q = "select p.naziv, COUNT(r.id) as 'broj' from rezervacije r join predstava p on r.predstavaId = p.id GROUP by r.predstavaId";
+        return $conn->query($q);
+    }
+
+    // 
+// 
 }

@@ -92,7 +92,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
            <!--<p id="time"> </p>-->
         </div>
         <div class="main-div">
-            <form method="POST" action="#">
+            <form method="POST" action="#" autocomplete="off">
                 <div class="imgcontainer">
                     <img src="img/Picture2.png" alt="Predstave" class="watch">
                 </div>
@@ -101,6 +101,8 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
                     <input type="text" placeholder="korisničko ime" name="username" class="form-control" required>
                     <input type="password" placeholder="lozinka" name="password" class="form-control" required>
                     <button type="submit" class="btn btn-primary" name="submit">Prijavi se</button>
+                    <br>
+                    <a style = "color:white;" href="http://localhost/domaci_iteh/register.php">Registracija</a>
                 </div>
 
             </form>
