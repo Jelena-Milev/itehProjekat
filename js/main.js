@@ -73,6 +73,7 @@ $('#dodajForm').submit(function () {
         console.log("Response: "+response);
         console.log("poruka: "+response.poruka);
         if (response.poruka === 'Predstava je uspešno ubačena') {
+            alert('Predstava je dodata');
             console.log('Predstava je dodata');
             console.log('EVO');
             location.reload(true);
@@ -150,6 +151,7 @@ $('#izmeniForm').submit(function () {
 
         console.log(response)
         if (response.poruka === 'Predstava je uspešno izmenjena') {
+            alert('Predstava je izmenjena');
             console.log('Predstava je izmenjena');
             location.reload(true);
             
