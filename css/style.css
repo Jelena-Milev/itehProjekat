@@ -1,6 +1,6 @@
-
+/*ovo je za login stranicu css*/
 body {
-   background-image: url("../img/cinema.jpg");
+   background-image: url("../img/pozadina.jpeg");
    background-position: center;
    
 }
@@ -15,16 +15,29 @@ form {
 .panel-heading{
     color: white;
 }
+.day-time{
+    border :100px;
+    background-color:#D99316;
+    border-color: #3F1918;
+    margin-right: 600px;
+    margin-left: 600px;
+    text-align: center;
+    border-radius: 5px;
+    font-style: bold;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    
+}
 
 /* Full-width inputs */
 input[type=text], input[type=password] {
     width: 60%;
     padding: 12px 20px;
     margin: 8px 0;
-    display: inline-block;
+   /* display: inline-block;*/
     border: 1px solid #ccc;
     box-sizing: border-box;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 
@@ -59,7 +72,7 @@ img.watch {
 
 .main-div {
   
-    background: rgb(71, 8, 8) none repeat scroll 0 0;
+    background: #3F1918 none repeat scroll 0 0;
     border-radius: 10px;
     margin: 10px auto 30px;
     max-width: 28%;
@@ -73,8 +86,8 @@ img.watch {
 }
 
 .login-form .btn.btn-primary {
-    background: rgb(7, 7, 70) none repeat scroll 0 0;
-    border-color: rgb(7, 7, 70);
+    background:#D99316 none repeat scroll 0 0;
+    border-color:#3F1918;
     color: #ffffff;
     font-size: 14px;
     width: 60%;

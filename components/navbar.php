@@ -20,13 +20,13 @@
               <a href="userindex.php"><span class="" aria-hidden="true"></span>&nbsp;&nbsp;PREDSTAVE</a>
             </li>
             <li>
-              <a href="reservations.php"><span class="fa fa-ticket" aria-hidden="true"></span>&nbsp;&nbsp;REZERVACIJE</a>
+              <a href="reservations.php"><span  aria-hidden="true"></span>&nbsp;&nbsp;REZERVACIJE</a>
             </li>
             <li>
-              <a href="contact.php"><span class="fa fa-phone" aria-hidden="true"></span>&nbsp;&nbsp;KONTAKT</a>
+              <a href="contact.php"><span  aria-hidden="true"></span>&nbsp;&nbsp;KONTAKT</a>
             </li>
             <li>
-              <a href="home.php?logout=true"><span class="fa fa-sign-out" aria-hidden="true"></span>&nbsp;&nbsp;ODJAVA</a>
+              <a href="home.php?logout=true"><span  aria-hidden="true"></span>&nbsp;&nbsp;ODJAVA</a>
             </li>
             
       <!-- <?php

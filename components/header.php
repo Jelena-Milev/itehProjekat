@@ -12,8 +12,9 @@
     <link href="css/bookmymovie.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <!--<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">-->
+   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+ 
 
   ';
 

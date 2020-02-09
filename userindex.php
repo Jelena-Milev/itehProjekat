@@ -37,7 +37,7 @@ if (count($result) == 0) {
 	<link rel="shortcut icon" type="image/x-icon" href="img/drama.png" />
 	<?php include 'components/header.php'; ?>
 
-	<title>Dobrodošli u pozorište</title>
+	<title>Pozorište na Terazijama</title>
 </head>
 
 <body>
@@ -54,21 +54,21 @@ if (count($result) == 0) {
 		<!-- Wrapper for slides -->
 		<div class="carousel-inner">
 			<div class="item active">
-				<!-- <div class="fill" style="background-image:url('img/post-strange.jpg');"></div> -->
+				<div class="fill" style="background-image:url('img/pozadina2.jpg');"></div> 
 				<div class="carousel-caption">
-					<h2>Rezervacija karata</h2>
+				<!--	<h2>Rezervacija karata</h2>-->
 				</div>
 			</div>
 			<div class="item">
-				<!-- <div class="fill" style="background-image:url('img/post-parmanu.jpg');"></div> -->
+			<div class="fill" style="background-image:url('img/pozadina1.jpeg');"></div>
 				<div class="carousel-caption">
-					<h2>Najnovije predstave</h2>
+					<!--<h2>Najnovije predstave</h2>-->
 				</div>
 			</div>
 			<div class="item">
-				<!-- <div class="fill" style="background-image:url('img/post-dunkirk.png');"></div> -->
+				<div class="fill" style="background-image:url('img/pozadina4.jpg');"></div> 
 				<div class="carousel-caption">
-					<h2>Rekli su o nama</h2>
+					<!--<h2>Rekli su o nama</h2>-->
 				</div>
 			</div>
 		</div>
@@ -85,10 +85,10 @@ if (count($result) == 0) {
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12">
-				<h2 class="page-header">Rezervišite svoje karte</h2>
+				<h2 class="page-header" style="text-align: center; color:white;">Rezervišite svoje karte</h2>
 			</div>
 			<div class="col-xs-12">
-				<h5 class="center-align text-uppercase lead">Predstave</h5>
+				<h5 class="center-align text-uppercase lead"  style="text-align: center; color:white;">Predstave</h5>
 			</div>
 		</div>
 		<div class="row">
@@ -107,7 +107,7 @@ if (count($result) == 0) {
 									<textarea id="utisakIzmeni" name="opis" class="form-control" placeholder="Ocena/Utisak o filmu" style="width: 100%; height: 150px;"><?php echo $row->opis ?></textarea>
 								</div>
 								<p>
-									<button class="btnReserve" type="button" value="<?php echo $row->id ?>" class="btn btn-default dropdown-toggle" style="color:#D11111; font-size:18px">Rezervišite sedište</button>
+									<button class="btnReserve" type="button" value="<?php echo $row->id ?>" class="btn btn-default dropdown-toggle" style="color:white; background-color: #3F1918; font-size:18px">Rezervišite sedište</button>
 								</p>
 							</div>
 						</center>
@@ -136,37 +136,37 @@ if (count($result) == 0) {
 							<!-- <img src="img/fav.jpg" alt="rocket_contact"/> -->
 						</div>
 						<form action="#" method="post" id="rezervacijaForm">
-							<h3 style="color: #FE3649">Rezervisanje sedišta</h3>
+							<h3 style="color: white">Rezervisanje sedišta</h3>
 							<div class="row">
 								<div class="col-md-6">
 									<div class="form-group">
-										<p value="" name="idPredstave">Naziv predstave:</p>
+										<p value="" name="idPredstave" style="color: white">Naziv predstave:</p>
 										<input id="filmIzmeni" type="text" name="naziv" required class="form-control" placeholder="Naziv filma" value="" readonly />
 									</div>
 
 									<div class="form-group">
-										<p>Trajanje predstave (u minutima):</p>
+										<p style="color: white">Trajanje predstave (u minutima):</p>
 										<input id="trajanjeIzmeni" type="number" name="trajanje" required min=0 class="form-control" placeholder="Trajanje filma" value="" readonly />
 
 									</div>
 
 
 									<div class="form-group">
-										<button id="btnRezervisi" type="submit" class="btn btn-success btn-block" style="background-color: #FE3649; border: #FE3649;"><i class="fas fa-couch"></i> Rezervišite sedište
+										<button id="btnRezervisi" type="submit" class="btn btn-success btn-block" style="background-color: #230000; border: #230000;"><i class="fas fa-couch"></i> Rezervišite sedište
 										</button>
 									</div>
 
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
-										<p>Izaberite datum izvodjenja:</p>
+										<p style="color: white">Izaberite datum izvodjenja:</p>
 										<select id="datumiIzvodjenja">
 											<option value="0"> Izaberite sedište: </option>
 										</select>
 									</div>
 
 									<div class="form-group">
-										<p>Izaberite sedište:</p>
+										<p style="color: white">Izaberite sedište:</p>
 										<select id="sediste">
 											<option value="0">- Select -</option>
 										</select>
@@ -177,7 +177,7 @@ if (count($result) == 0) {
 					</div>
 				</div>
 				<div class="modal-footer" style="border:none;">
-					<!-- <button type="button" class="btn btn-default" style="background-color: #FE3649; border: #FE3649; color:white;" data-dismiss="modal">Close</button>-->
+					<button type="button" class="btn btn-default" style="background-color: #230000; border: #230000; color:white;" data-dismiss="modal">Zatvori</button>
 				</div>
 			</div>
 
@@ -188,39 +188,39 @@ if (count($result) == 0) {
 
 	<div class="bottom">
 		<!-- Call to Action Section -->
-		<div class="pre-footer small">
+		<div class="pre-footer small" style="background-color:#833306; color:black; opacity:0.9;">
 			<div class="row">
 				<div class="col-xs-12">
-					<h5 class="center-align bold" style="color:#555;">Lorem ipsum dolor sit amet consectetur </h5>
+					<h5 class="center-align bold"style="color:white" >O nama</h5>
 				</div>
 				<div class="row row-content">
-					<div class="col-xs-12">
-						Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi nihil quidem pariatur sunt sed nulla eaque officiis praesentium deserunt, modi maiores saepe officia minus, veniam rerum fugiat nobis? Optio, quis. Lorem ipsum dolor sit amet consectetur adipisicing elit. In eveniet fugiat eum minima expedita libero quaerat, beatae sint itaque, ex aspernatur odit deserunt commodi consectetur velit necessitatibus ab amet recusandae.
+					<div class="col-xs-12 " style="text-align:center;"> 
+						"Tražim da sala bude na Terazijama. Humorističko ili bulevarsko pozorište, koje nedostaje Beogradu, mora biti tamo gde ljudi ubijau vreme, a mi im onda ponudimo smešno ubijanje samoće!"
 					</div>
 				</div>
 				<div class="row row-content">
-					<div class="col-sm-4 col-xs-12">
-						<h5 class="bold">Lorem ipsum dolor sit</h5>
-						<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi nihil quidem pariatur sunt sed nulla eaque officiis praesentium deserunt, modi maiores saepe officia minus, veniam rerum fugiat nobis? Optio, quis. Lorem ipsum dolor sit amet consectetur adipisicing elit. In eveniet fugiat eum minima expedita libero quaerat, beatae sint itaque, ex aspernatur odit deserunt commodi consectetur velit necessitatibus ab amet recusandae.
+					<div class="col-sm-4 col-xs-12" id="pozoriste" >
+						<h5 class="bold" style="color:white" >O POZORIŠTU</h5>
+						<p>Pozorište na Terazijama osnovano je 23. decembra 1949. godine kao Humorističko pozorište. Danas je Pozorište na Terazijama sinonim za mjuzikl i muzičke predstave, ne samo u Beogradu već u celoj zemlji. Osim izvođenja brodvejskih hitova kao što je na primer Kabare, sada se u pozorištu na Terazijama izvode predstave koje su i širi svetski hitovi kao što je predstava Fantom iz Opere.
 						</p>
 					</div>
-					<div class="col-sm-4 col-xs-12">
-						<h5 class="bold">Lorem ipsum dolor sit</h5>
+					<div class="col-sm-4 col-xs-12" id="pozoriste">
+						<h5 class="bold" style="color:white" >ANSAMBLI</h5>
 						<p>
-							Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi nihil quidem pariatur sunt sed nulla eaque officiis praesentium deserunt, modi maiores saepe officia minus, veniam rerum fugiat nobis? Optio, quis. Lorem ipsum dolor sit amet consectetur adipisicing elit. In eveniet fugiat eum minima expedita libero quaerat, beatae sint itaque, ex aspernatur odit deserunt commodi consectetur velit necessitatibus ab amet recusandae.
+							Tokom sedam decenija postojanja, pozorište na Terazijama je svoj dramski, orkestarski, baletski i horski ansambl neprekidno obogaćivalo novim, prvenstveno mladim, talentovanim i školovanim umetnicima. To mu je uvek donosilo dominantnu notu umetničke svežine, koju je publika nepogrešivo umela da prepozna. Trenutni ansambli su dopunjeni i tehničkim sektorom.
 						</p>
 					</div>
-					<div class="col-sm-4 col-xs-12">
-						<h5 class="bold">Lorem ipsum dolor sit</h5>
+					<div class="col-sm-4 col-xs-12" id="pozoriste">
+						<h5 class="bold" style="color:white" >REPERTOAR</h5>
 						<p>
-							Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi nihil quidem pariatur sunt sed nulla eaque officiis praesentium deserunt, modi maiores saepe officia minus, veniam rerum fugiat nobis? Optio, quis. Lorem ipsum dolor sit amet consectetur adipisicing elit. In eveniet fugiat eum minima expedita libero quaerat, beatae sint itaque, ex aspernatur odit deserunt commodi consectetur velit necessitatibus ab amet recusandae.
+							Pozorište na Terazijama pored stranih hitova poslednjih deceniju i više, neguje i razvija i predstave zasnovane na domaćoj literaturi koje prepoznajemo kao "domaći mjuzikl", među kojima su: Lutka sa naslovne strane, Maratonci trče počasni krug, Na slovo, na slovo, kao i još uvek aktuelnih predstava poput Zone Zamfirove, Glavo luda ili Mister Dolar.
 						</p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<?php include_once("./components/footer.php"); ?>
+	<?php include_once("./components/footer2.php"); ?>
 	<link rel="stylesheet" href="jquery-ui/jquery-ui.min.css">
 	<script src="jquery-ui/external/jquery/jquery.js"></script>
 	<script src="jquery-ui/jquery-ui.min.js"></script>

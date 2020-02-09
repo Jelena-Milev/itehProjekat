@@ -34,7 +34,8 @@ $result = Rezervacija::getAll($id);
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<?php include 'components/header.php'; ?>
 
-	<title>Dobrodošli u pozorište</title>
+
+	<title>Pozorište na Terazijama</title>
 </head>
 
 <body>
@@ -77,17 +78,18 @@ $result = Rezervacija::getAll($id);
 	</header> -->
 
 	<div class="container">
+<<<<<<< HEAD
 		<div class="row">
 			<div class="col-lg-12">
-				<h2 class="page-header">Rezervišite svoje karte</h2>
+				<h2 class="page-header" style="color:white; text-align:center">Rezervišite svoje karte</h2>
 			</div>
 			<div class="col-xs-12">
-				<h5 class="center-align text-uppercase lead">Rezervacije</h5>
+				<h5 class="center-align text-uppercase lead" style="color:white; text-align:center">Rezervacije</h5>
 			</div>
 		</div>
-		<table id="myTable" class="table table-striped">
+		<table id="myTable" class="table table-striped" style="background-color:white;">
 			<thead>
-				<tr>
+				<tr style="color:black;">
 					<th scope="col">Datum</th>
 					<th scope="col">Naziv predstave</th>
 					<th scope="col">Sala</th>
@@ -168,6 +170,12 @@ $result = Rezervacija::getAll($id);
 
 	<script src="js/reservation.js"></script>	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<?php include_once("./components/footer2.php"); ?>
+	<script>
+		$('.carousel').carousel({
+			interval: 5000 //changes the speed
+		});
+	</script>
 </body>
 
 </html>
