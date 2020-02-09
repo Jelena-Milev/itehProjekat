@@ -102,6 +102,7 @@ if (count($result) == 0) {
 							<div class="caption">
 								<h4><?php echo $row->naziv; ?></h4>
 								<h5><?php echo $row->zanr; ?></h5>
+								<label>19:30h</label>
 								<div class="form-group">
 									<label for="utisakIzmeni">O predstavi:</label>
 									<textarea id="utisakIzmeni" name="opis" class="form-control" placeholder="Ocena/Utisak o filmu" style="width: 100%; height: 150px;"><?php echo $row->opis ?></textarea>

@@ -101,8 +101,8 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
                     <input type="text" placeholder="korisničko ime" name="username" class="form-control" required>
                     <input type="password" placeholder="lozinka" name="password" class="form-control" required>
                     <button type="submit" class="btn btn-primary" name="submit">Prijavi se</button>
-                    <br>
-                    <a style = "color:white;" href="http://localhost/domaci_iteh/register.php">Registracija</a>
+                    <span style="padding-left:20px;"><a href="register.php">Registracija</a></span>
+                    <!-- <a style = "color:white;" href="http://localhost/domaci_iteh/register.php">Registracija</a> -->
                 </div>
 
             </form>

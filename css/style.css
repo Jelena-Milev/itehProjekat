@@ -98,3 +98,10 @@ img.watch {
     border-radius: 10px;
 }
 
+a{
+    text-decoration: none;
+    font-size: 18px;
+    color: #ffffff;
+    background-color: transparent;
+}
+

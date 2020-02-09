@@ -78,7 +78,6 @@ $result = Rezervacija::getAll($id);
 	</header> -->
 
 	<div class="container">
-<<<<<<< HEAD
 		<div class="row">
 			<div class="col-lg-12">
 				<h2 class="page-header" style="color:white; text-align:center">Rezervišite svoje karte</h2>

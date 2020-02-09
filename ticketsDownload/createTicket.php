@@ -51,7 +51,7 @@ body {
   section .right {
     float: right;
     width: 160px;
-    padding-top: 30px;
+    padding-top: 10px;
   }
   section .event {
     margin-bottom: 40px;
@@ -72,8 +72,8 @@ body {
     text-transform: uppercase;
   }
   section .seats {
-    margin-bottom: 35px;
-    font-size: 0.36em;
+    margin-bottom: 15px;
+    font-size: 0.45em;
     text-transform: uppercase;
     text-align: right;
   }
@@ -90,6 +90,7 @@ body {
     /* background: rgba(255, 255, 255, 0.5); */
     font-family: 'Montserrat';
     font-size: 1.5em;
+    font-weight: bold;
     text-align: center;
     vertical-align: middle;
   }
@@ -105,6 +106,7 @@ body {
       </div>
       <div class='right'>
         <div class='seats' id='datum'>Datum<span>$datum</span></div>
+        <div class='seats' id='vreme'>Vreme<span>19:30h</span></div>
         <div class='seats' id='sala'>Sala<span>$sala</span></div>
         <div class='seats' id='sediste'>Sedište<span>$sediste</span></div>
       </div>
