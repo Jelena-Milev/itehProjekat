@@ -95,6 +95,7 @@ $result = Rezervacija::getAll($id);
 					<th scope="col">Sedište</th>
 					<th scope="col">Trajanje predstave (min)</th>
 					<th scope="col">Žanr</th>
+					<th scope="col">Cena</th>
 					<th scope="col"></th>
 				</tr>
 			</thead>
@@ -112,6 +113,7 @@ $result = Rezervacija::getAll($id);
 							<td class="sediste"><?php echo $row->sediste ?></td>
 							<td><?php echo $row->trajanje ?></td>
 							<td><?php echo $row->zanr ?></td>
+							<td class="cena"><?php echo $row->cena ?> RSD</td>
 							<td>
 								<button id="btnOdstampaj" class="btn btn-info btn-block checked-rezervacija" value=<?php echo $row->id ?> style="background-color: #352621; border: #352621;"><i class="fa fa-arrow-down"></i> Odstampaj </button>
 							</td>

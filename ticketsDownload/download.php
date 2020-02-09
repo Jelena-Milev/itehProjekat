@@ -6,10 +6,10 @@ $location = "karte/";
 
 if (
   isset($_GET["predstava"]) and !empty($_GET["predstava"]) and isset($_GET["datum"]) and !empty($_GET["datum"]) and
-  isset($_GET["sala"]) and !empty($_GET["sala"]) and isset($_GET["sediste"]) and !empty($_GET["sediste"])
+  isset($_GET["sala"]) and !empty($_GET["sala"]) and isset($_GET["sediste"]) and !empty($_GET["sediste"] and isset($_GET["cena"]) and !empty($_GET["cena"]))
 ) {
 
-  create($_GET["predstava"], $_GET["datum"], $_GET["sediste"], $_GET["sala"]);
+  create($_GET["predstava"], $_GET["datum"], $_GET["sediste"], $_GET["sala"], $_GET["cena"]);
   try {
     $datum = $string = str_replace(' ', '', $_GET["datum"]);
     $predstava = $string = str_replace(' ', '', $_GET["predstava"]);

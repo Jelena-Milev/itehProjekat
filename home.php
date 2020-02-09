@@ -147,6 +147,7 @@ if (count($result) == 0) {
                             <th scope="col">Žanr predstave</th>
                             <th scope="col">Trajanje predstave (min)</th>
                             <th scope="col">Opis predstave</th>
+                            <th scope="col">Cena</th>
                             <th scope="col">Izaberi</th>
                         </tr>
                     </thead>
@@ -164,6 +165,7 @@ if (count($result) == 0) {
                                 <td><?php echo $row->zanr ?></td>
                                 <td><?php echo $row->trajanje ?></td>
                                 <td><?php echo $row->opis ?></td>
+                                <td width="10%"><?php echo $row->cena ?></td>
                                 <td>
                                     <label class="custom-radio-btn">
                                         <input type="radio" name="checked-film" value=<?php echo $row->id ?>>
@@ -212,6 +214,10 @@ if (count($result) == 0) {
 
                                         </div>
                                         <div class="form-group">
+                                            <input type="number" name="cena" required min=0 class="form-control" placeholder="Cena predstave" value="" required/>
+
+                                        </div>
+                                        <div class="form-group">
                                             <button id="btnDodaj" type="submit" class="btn btn-success btn-block" style="background-color: #230000; border: #230000;"><i class="glyphicon glyphicon-plus"></i> Dodaj
                                             </button>
                                         </div>
@@ -220,7 +226,7 @@ if (count($result) == 0) {
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <textarea name="opis" class="form-control" placeholder="Opis predstave" style="width: 100%; height: 150px;"></textarea>
-                                        </div>
+                                        </div>                                        
                                     </div>
                                 </div>
                             </form>
@@ -264,6 +270,9 @@ if (count($result) == 0) {
                                         </div>
                                         <div class="form-group">
                                             <input id="trajanjeIzmeni" type="number" name="trajanje" required min=0 class="form-control" placeholder="Trajanje predstave" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input id="cenaIzmeni" type="number" name="cena" required min=0 class="form-control" placeholder="Cena predstave" value="" />
                                         </div>
                                         <div class="form-group">
                                             <button id="btnIzmeni" type="submit" class="btn btn-success btn-block" style="background-color: #230000; border: #230000;"><i class="glyphicon glyphicon-plus"></i> Izmeni

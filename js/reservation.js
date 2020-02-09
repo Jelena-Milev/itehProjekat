@@ -11,11 +11,14 @@ $('.checked-rezervacija').click(function () {
     var $predstava = $(this).closest("tr")
         .find(".predstava")
         .text();
-    console.log("Predstava "+$predstava)
+    var $cena = $(this).closest("tr")
+        .find(".cena")
+        .text();
+    console.log("Cena " + $cena)
     request = $.ajax({
 
         // http://localhost/domaci_iteh/index.php?msg=Uspešno ste se registrovali. Možete se prijaviti."
-        url: './ticketsDownload/download.php/?predstava=' + $predstava + '&datum=' + $datum + '&sala=' + $sala + '&sediste=' + $sediste,
+        url: './ticketsDownload/download.php/?predstava=' + $predstava + '&datum=' + $datum + '&sala=' + $sala + '&sediste=' + $sediste + '&cena=' + $cena,
         type: 'get',
     });
 
@@ -29,8 +32,8 @@ $('.checked-rezervacija').click(function () {
         //     alert('Film nije obrisan');
         // }
         console.log(response);
-        window.open("ticketsDownload/"+response);
-        
+        window.open("ticketsDownload/" + response);
+
     });
 
     request.fail(function (jqXHR, textStatus, errorThrown) {

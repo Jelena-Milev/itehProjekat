@@ -107,6 +107,7 @@ if (count($result) == 0) {
 									<label for="utisakIzmeni">O predstavi:</label>
 									<textarea id="utisakIzmeni" name="opis" class="form-control" placeholder="Ocena/Utisak o filmu" style="width: 100%; height: 150px;"><?php echo $row->opis ?></textarea>
 								</div>
+								<h4>Cena: <?php echo $row->cena; ?> RSD</h5>
 								<p>
 									<button class="btnReserve" type="button" value="<?php echo $row->id ?>" class="btn btn-default dropdown-toggle" style="color:white; background-color: #3F1918; font-size:18px">Rezervišite sedište</button>
 								</p>

@@ -107,6 +107,8 @@ $('#btn-izmeni').click(function () {
         console.log(predstava.trajanje.trim());
         $('#utisakIzmeni').val(predstava.opis.trim());
         console.log(predstava.opis.trim());
+        $('#cenaIzmeni').val(predstava.cena.trim());
+        console.log("Cena:"+predstava.cena.trim());
         $('#izmeniForm input[name=id]').val(checked.val());
       
         console.log("Podaci iz get by id "+response);

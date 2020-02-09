@@ -1,6 +1,6 @@
 <?php
 
-function create($predstava, $datum, $sediste, $sala)
+function create($predstava, $datum, $sediste, $sala, $cena)
 {
 
   $ticket = "<!DOCTYPE html>
@@ -54,9 +54,10 @@ body {
     padding-top: 10px;
   }
   section .event {
-    margin-bottom: 40px;
+    margin-bottom: 10px;
+    margin-top: 10px;
     font-weight: 700;
-    font-size: 1.6em;
+    font-size: 0.6em;
     line-height: 35px;
     text-transform: uppercase;
   }
@@ -100,8 +101,8 @@ body {
   <div class='container'>
     <section>
       <div class='left'>
-        <div class='event'></div>
         <div class='title' id='title'>$predstava</div>
+        <div class='event'>Cena: $cena</div>
         <div class='info'>Pozorište na Terazijama // TRG NIKOLE PAŠIĆA 3 // 11000 BEOGRAD </div>
       </div>
       <div class='right'>
