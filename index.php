@@ -27,8 +27,8 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
         header("Location: " . $location);
         exit();
     } else {
-        header('Location: index.php');
-        echo '<script type="text/javascript">alert("Uneli ste pogrešnu šifru!"); 
+        // header('Location: index.php');
+        echo '<script type="text/javascript">alert("Uneli ste pogrešne parametre za prijavu!"); 
                                                 window.location.href = "http://localhost/domaci_iteh/";</script>';
         exit();
     }
@@ -39,7 +39,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="css/style.css">  <!--ovo je moja login stranica-->
+    <link rel="stylesheet" type="text/css" href="css/style.css"> 
     <link rel="shortcut icon" type="image/x-icon" href="img/drama.png" />
  
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -101,7 +101,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
                     <input type="text" placeholder="korisničko ime" name="username" class="form-control" required>
                     <input type="password" placeholder="lozinka" name="password" class="form-control" required>
                     <button type="submit" class="btn btn-primary" name="submit">Prijavi se</button>
-                    <span style="padding-left:20px;"><a href="register.php">Registracija</a></span>
+                    <span"><a href="register.php">Registracija</a></span>
                     <!-- <a style = "color:white;" href="http://localhost/domaci_iteh/register.php">Registracija</a> -->
                 </div>
 
