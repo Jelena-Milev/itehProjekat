@@ -11,9 +11,9 @@ $(document).ready(function () {
         // var type = $("#usertype");
 
         var e_patt = new RegExp(/^[a-z0-9_-]+(\.[a-z0-9_-]+)*@[a-z0-9_-]+(\.[a-z0-9_-]+)*(\.[a-z]{2,4})$/);
-        if (fullName.val() == "" || fullName.val().length < 10) {
+        if (fullName.val() == "" || fullName.val().length < 6) {
             fullName.addClass("border-danger");
-            $("#fn_error").html("<span class='text-danger'>Please Enter Full Name and Full Name should be more than 12 char</span>");
+            $("#fn_error").html("<span class='text-danger'>Morate uneti puno ime i prezime duže od 6 karaktera</span>");
             status = false;
         } else {
             fullName.removeClass("border-danger");
@@ -22,7 +22,7 @@ $(document).ready(function () {
         }
         if (username.val() == "" || username.val().length < 6) {
             username.addClass("border-danger");
-            $("#u_error").html("<span class='text-danger'>Please Enter Username and Username should be more than 6 char</span>");
+            $("#u_error").html("<span class='text-danger'>Morate uneti korisničko ime duže od 6 karaktera</span>");
             status = false;
         } else {
             username.removeClass("border-danger");
@@ -31,7 +31,7 @@ $(document).ready(function () {
         }
         if (!e_patt.test(email.val())) {
             email.addClass("border-danger");
-            $("#e_error").html("<span class='text-danger'>Please Enter Valid Email Address</span>");
+            $("#e_error").html("<span class='text-danger'>Morate uneti validnu email adresu</span>");
             status = false;
         } else {
             email.removeClass("border-danger");
@@ -40,7 +40,7 @@ $(document).ready(function () {
         }
         if (pass1.val() == "" || pass1.val().length < 9) {
             pass1.addClass("border-danger");
-            $("#p1_error").html("<span class='text-danger'>Please Enter more than 9 digit password</span>");
+            $("#p1_error").html("<span class='text-danger'>Morate uneti šifru dužu od 9 karaktera</span>");
             status = false;
         } else {
             pass1.removeClass("border-danger");
@@ -49,7 +49,7 @@ $(document).ready(function () {
         }
         if (pass2.val() == "" || pass2.val().length < 9) {
             pass2.addClass("border-danger");
-            $("#p2_error").html("<span class='text-danger'>Please Enter more than 9 digit password</span>");
+            $("#p2_error").html("<span class='text-danger'>Morate potvrditi šifru dužu od 9 karaktera</span>");
             status = false;
         } else {
             pass2.removeClass("border-danger");
@@ -117,7 +117,7 @@ $(document).ready(function () {
             });
         } else {
             pass2.addClass("border-danger");
-            $("#p2_error").html("<span class='text-danger'>Password is not matched</span>");
+            $("#p2_error").html("<span class='text-danger'>Lozinke nisu identične</span>");
             status = true;
         }
     })

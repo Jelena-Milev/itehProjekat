@@ -7,6 +7,7 @@ function create($predstava, $datum, $sediste, $sala, $cena)
 <html>
 <head>
 <title>Karta</title>
+<link rel='shortcut icon' type='image/x-icon' href='img/drama.png' />
 <meta content='width=device-width, initial-scale=1.0' name='viewport'>
 <meta http-equiv='content-type' content='text-html; charset=utf-8'>
 

@@ -75,7 +75,7 @@ if (count($result) == 0) {
                     'is3D': true,
                     'width': 550,
                     'height': 450,
-                    'colors': ['#990303', '#5c2a2a', '#9c2f2f', '#ab0000', '#f6c7b6', '#a64141']
+                    'colors': ['#990303', '#5c2a2a', '#9c2f2f', '#ab0000', '#c99393', '#f6c7b6', '#a64141', '#593636', '#f24444', '#800000']
                 };
 
                 // Instantiate and draw our chart, passing in some options.
